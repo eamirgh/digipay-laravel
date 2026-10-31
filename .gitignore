@@ -1,0 +1,15 @@
+/vendor/
+.phpunit.result.cache
+.env
+.env.backup
+.env.production
+composer.lock
+node_modules/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

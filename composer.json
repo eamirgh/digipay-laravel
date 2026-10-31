@@ -1,0 +1,52 @@
+{
+    "name": "eamirgh/digipay-laravel",
+    "description": "Production-grade scalable Digipay UPG integration for Laravel 11, 12, 13+",
+    "keywords": ["laravel", "digipay", "payment", "upg", "gateway", "eamirgh"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Amir Ghaffari",
+            "email": "eamirgh@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2 || ^8.3 || ^8.4",
+        "illuminate/support": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/http": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/contracts": "^11.0 || ^12.0 || ^13.0",
+        "guzzlehttp/guzzle": "^7.8"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0 || ^10.0 || ^11.0",
+        "phpunit/phpunit": "^10.5 || ^11.0",
+        "mockery/mockery": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Eamirgh\\Digipay\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Eamirgh\\Digipay\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Eamirgh\\Digipay\\DigipayServiceProvider"
+            ],
+            "aliases": {
+                "Digipay": "Eamirgh\\Digipay\\Facades\\Digipay"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
