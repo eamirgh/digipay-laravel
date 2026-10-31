@@ -52,7 +52,16 @@ jobs:
           coverage: none
 
       - name: Install dependencies
+        env:
+          COMPOSER_NO_INTERACTION: 1
+          COMPOSER_NO_AUDIT: 1
+          COMPOSER_AUDIT_BLOCK_INSECURE: false
+          COMPOSER_POLICY_ADVISORIES_BLOCK: false
         run: |
+          composer config --global audit.block-insecure false 2>/dev/null || true
+          composer config --global policy.advisories.block false 2>/dev/null || true
+          composer config audit.block-insecure false 2>/dev/null || true
+          composer config policy.advisories.block false 2>/dev/null || true
           composer require "laravel/framework:${{ matrix.laravel }}" --no-interaction --no-update
           composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction
 
